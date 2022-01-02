@@ -95,9 +95,9 @@ concept AnyContainer = requires(T container)
       container.begin();
       container.end();
       container.size();
-}
+};
 
-void print(const auto& container) requires AnyContainer<T>
+void print(const AnyContainer auto& container)
 {
     for(const auto& item: container)
         cout << item << endl;
@@ -158,7 +158,6 @@ int main()
     auto filtered = filter(get_year() | less_than(2000));
     cout << filtered(v).size()<< endl;
 
-    print(5);
 
     return 0;
 }
