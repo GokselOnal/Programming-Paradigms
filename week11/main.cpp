@@ -155,11 +155,10 @@ auto reverse_(const ContainerTemplate<Item, size>& arr)
 
 int main()
 {
-    using CONTAINER = std::array<int, 6>;
-    //using CONTAINER = std::list<float>;
+    //using CONTAINER = std::array<int, 6>;
+    using CONTAINER = std::list<float>;
 
     auto PRINT = print();
-    //print_arr(CONTAINER{1, 50, -3, 5, 10, 100});
     CONTAINER{1, 50, -3, 5, 10, 100} | PRINT | reverse(); // | PRINT;
 
 //    CONTAINER{1, 50, -3, 5, 10, 100} | filter(higher_than(5)) | PRINT;
@@ -172,12 +171,12 @@ int main()
 
 //    CONTAINER{1, 50, -3, 5, 10, 100} | accumulator(1, multiplier) | PRINT;
 
-//    CONTAINER{1, 50, -3, 5, 10, 100}
-//            | reverse()
-//            | filter(all_of(higher_than(0),less_than(60)))
-//            | take<2>() | transform(add(2))
-//            | accumulator(1, multiplier)
-//            | PRINT;
+    CONTAINER{1, 50, -3, 5, 10, 100}
+            | reverse()
+            | filter(all_of(higher_than(0),less_than(60)))
+            | take<2>() | transform(add(2))
+            | accumulator(1, multiplier)
+            | PRINT;
 
     return 0;
 }
